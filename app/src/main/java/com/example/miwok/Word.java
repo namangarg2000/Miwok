@@ -17,17 +17,21 @@ public class Word {
     private static final int NO_IMAGE_PROVIDED = -1;
     //we use -1 as it is out of the scope of all the resource ids
 
+    private int mAudioResourceId;
+
     //Constructor
-    public Word(String defaultTranslation, String miwokTranslation){
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     //image resource id is drawable image resource id
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId){
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
 
     public String getDefaultTranslation() {
@@ -39,6 +43,10 @@ public class Word {
     }
 
     public int getImageResourceId(){ return mImageResourceId; }
+
+    public int getAudioResourceId(){
+        return mAudioResourceId;
+    }
 
     /*
     * Method returns true when image resource has been set
