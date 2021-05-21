@@ -19,6 +19,8 @@ public class FamilyMembersActivity extends AppCompatActivity {
     //handles audio focus when playing a sound file
     private AudioManager mAudioManager;
 
+
+
     AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
         public void onAudioFocusChange(int focusChange) {
@@ -52,6 +54,8 @@ public class FamilyMembersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
+        //Gets the up button in the action bar up button is the back button on the action bar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
